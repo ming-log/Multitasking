@@ -12,7 +12,7 @@ monkey.patch_all()  # 将程序中用到的耗时操作的代码，全都换位g
 def f1(n):
     for i in range(n):
         print(gevent.getcurrent(), i)
-        time.sleep(2)  # 必须使用自带的延时函数
+        time.sleep(2)  # 使用其他模块的函数时，需要声明monkey.patch_all()
 
 
 def f2(n):
